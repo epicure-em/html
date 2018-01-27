@@ -68,7 +68,7 @@
         <span class="tate"></span>
         <span class="yoko"></span>
     </label>
-    <button type="button" class="button4"><span class="inst"><a href="https://www.instagram.com/andon_shirahama/?ref=badge" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></span></button>
+    <!--<button type="button" class="button4"><span class="inst"><a href="https://www.instagram.com/andon_shirahama/?ref=badge" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></span></button>-->
     <button type="button" class="button3"><span class="tiwt"><a href="https://twitter.com/andon_shirahama" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></span></button>
     <button type="button" class="button2"><span class="face"><a href="https://www.facebook.com/andon.shirahama/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></span></button>
     <button type="button" class="button1"><a href="#searchbox" data-remodal-target="searchbox" class="nav_btn search_btn"></a></button>

@@ -1,18 +1,10 @@
-<div class="post-list-card cf">
+<div class="top-post-list">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<article <?php post_class('post-list cf animated fadeIn'); ?> role="article">
-<?php
-$days = 30; //Newを表示させたい期間の日数
-$today = date_i18n('U');
-$entry = get_the_time('U');
-$kiji = date('U',($today - $entry)) / 86400 ;
-if( $days > $kiji ){
-echo '<span class="card_new">New</span>';
-}
-?>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+<article <?php post_class('post-list animated fadeIn'); ?> role="article">
+
+<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="cf">
 
 <?php
 $cat = get_the_category();
@@ -22,25 +14,36 @@ $cat = $cat[0];
 <?php if ( has_post_thumbnail()) : ?>
 <figure class="eyecatch">
 <?php the_post_thumbnail('home-thum'); ?>
+<span class="cat-name cat-id-<?php echo $cat->cat_ID;?>"><?php echo $cat->name; ?></span>
 </figure>
 <?php else: ?>
 <figure class="eyecatch noimg">
 <img src="<?php echo get_template_directory_uri(); ?>/library/images/noimg.png">
+<span class="cat-name cat-id-<?php echo $cat->cat_ID;?>"><?php echo $cat->name; ?></span>
 </figure>
 <?php endif; ?>
 
-<section class="entry-content cf">
-<span class="cat-name cat-id-<?php echo $cat->cat_ID;?>"><?php echo $cat->name; ?></span>
-<p class="byline entry-meta vcard">
-<span class="date gf updated"><?php the_time('Y.m.d'); ?></span>
-<span class="writer name author"><span class="fn"><?php the_author(); ?></span></span>
-</p>
+<section class="entry-content">
 <h1 class="h2 entry-title"><?php the_title(); ?></h1>
 
-
-<div class="description"><?php the_excerpt(); ?></div>
-
+<p class="byline entry-meta vcard">
 <span class="date gf updated"><?php the_time('Y.m.d'); ?></span>
+<?php
+$days = 30; //Newを表示させたい期間の日数
+$today = date_i18n('U');
+$entry = get_the_time('U');
+$kiji = date('U',($today - $entry)) / 86400 ;
+if( $days > $kiji ){
+echo '<span class="card_new">New</span>';
+}
+?>
+<span class="writer name author"><span class="fn"><?php the_author(); ?></span></span>
+</p>
+
+<?php if( !is_mobile() ): ?>
+<div class="description"><?php the_excerpt(); ?></div>
+<?php endif; ?>
+
 </section>
 </a>
 </article>

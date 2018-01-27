@@ -35,26 +35,6 @@ $author_id = $post->post_author;
 <?php if (function_exists('z_taxonomy_image')) z_taxonomy_image(); ?>
 
 
-<!-- カテゴリローカルメニュー -->
-<div class="cat-link-all">
-<ul>
-<?php
-$args = array(
-'orderby' => 'order',
-'order' => 'ASC',
-'exclude' => '0' // 「未設定」カテゴリを除外
-
-);
-$cat_all = get_categories($args); ?>
-<?php foreach($cat_all as $value): ?>
-    <li class="cat-<?php echo esc_html($value->category_nicename); ?>"><a href="<?php echo get_category_link($value); /* カテゴリへのリンク */ ?>"><?php echo esc_html($value->name); /* カテゴリ名 */ ?></a></li>
-<?php endforeach; ?>
-</ul>
-</div>
-<!--  -->
-
-
-
 
 <?php
 	$toplayout = get_option('opencage_archivelayout');
@@ -83,6 +63,27 @@ $cat_all = get_categories($args); ?>
 <?php endif;?>
 
 <?php pagination(); ?>
+
+
+
+<!-- カテゴリローカルメニュー -->
+<div class="cat-link-all">
+<ul>
+<?php
+$args = array(
+'orderby' => 'order',
+'order' => 'ASC',
+'exclude' => '0' // 「未設定」カテゴリを除外
+
+);
+$cat_all = get_categories($args); ?>
+<?php foreach($cat_all as $value): ?>
+    <li class="cat-<?php echo esc_html($value->category_nicename); ?>"><a href="<?php echo get_category_link($value); /* カテゴリへのリンク */ ?>"><?php echo esc_html($value->name); /* カテゴリ名 */ ?></a></li>
+<?php endforeach; ?>
+</ul>
+</div>
+<!--  -->
+
 
 </main>
 </div>

@@ -149,7 +149,7 @@ Typography
 ========================================================================== */
 /* Googleフォント */
 .gf{
-	font-family: 'Concert One', cursive;
+	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
 }
 h1 {
@@ -729,7 +729,7 @@ max-width: 100%;
 margin:0;
 }
 .header {position: relative;z-index: 2;}
-#inner-header{position:relative;background: #ffffff;padding: 0;}
+#inner-header{position:relative;background: #ffffff;padding: 0; opacity: 0.8;}
 .header.bg{background: #ffffff; margin-top: 0;}
 #logo {padding: 0 1em;}
 #logo .h1{margin:0;padding:0;}
@@ -1288,11 +1288,20 @@ margin-bottom:0.3em;
 .post-list-card{
 margin-left:-1%;
 margin-right:-1%;
+margin-top: 2%;
 }
 .post-list-card .post-list{width:48%;margin: 0 1% 2.5%;float:left;height:390px;}
-.post-list-card .post-list a{display:block;padding: .6em;text-decoration:none;color: #333;background: #fff;height:100%;box-shadow: 0 2px 5px rgba(0, 0, 0, .13);overflow: hidden;position: relative;}
+.post-list-card .post-list a{
+    display:block;
+    padding: .6em;
+    text-decoration:none;
+    color: #333;
+    background: #fff;
+    height:100%;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, .13);*/
+    overflow: hidden;position: relative;}
 .post-list-card .post-list a:after{content: '';display: block;width: 100%;height: 2.5em;background:linear-gradient(rgba(255,255,255,0) 0,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);position: absolute;bottom: 0;}
-.post-list-card .post-list a:hover{box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);}
+/*.post-list-card .post-list a:hover{box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);}*/
 .post-list-card .post-list a:hover .eyecatch img{
 -webkit-transform: scale(1.05);
 -moz-transform: scale(1.05);
@@ -1665,6 +1674,7 @@ right:3%;
 ARCHIVE PAGE STYLES
 ******************************************************************/
 .archivettl{
+        margin-top: 4em;
 }
 .archivettl h1{
 font-size:1.1em;
@@ -2020,7 +2030,10 @@ float:right;
 #container.sidebarleft .sidebar{
 float:left;
 }
-#logo{display:inline-block;float:left;}
+#logo{
+    display:inline-block;
+      float:left;
+}
 #logo .h1{
 display:table-cell;
 height: 58px;
@@ -2046,7 +2059,7 @@ margin-bottom: 6px;
 }
 #logo img{max-height: 43px;}
 .header.headercenter{text-align:center;}
-.header.headercenter #logo{float:;display:block;margin: .2em auto;}
+.header.headercenter #logo{float:none;display:block;margin: .2em auto;}
 .header.headercenter #logo .h1{display: inline-block;height: auto;margin-top: 5px;}
 .header.headercenter #logo a{
 display:block;
@@ -2423,6 +2436,7 @@ margin-bottom:0;
 /* Mobile Styles */
 /* --------------------------------------------- */
 @media only screen and (max-width: 768px) {
+
 .home #content,
 .blog #content{
 margin:0;
@@ -2579,9 +2593,11 @@ display:none;
 }
 /*   header */
 #inner-header{
-position:relative;
+position:fixed;
 width: 100%;
 padding:4px 0;
+top: 0;
+    height: 70px !important;
 }
 #logo{
 max-width: 71%;
@@ -2610,7 +2626,7 @@ line-height: 1.1;
 width: auto;
 margin-top: 1px;
 max-width: 100%;
-max-height: 45px;
+max-height: 45px !important;
 }
 #breadcrumb{margin: 0;font-size: 10px;width: 100%;border-bottom: 1px solid #F7F7F7;}
 
@@ -2722,6 +2738,7 @@ height:auto;
 width:100%;
 }
 .top-post-list{
+    margin-top: 2em;
 margin-left: -1em;
 margin-right: -1em;
 }
@@ -2754,6 +2771,7 @@ margin-left:-0.9em;
 
 .top-post-list .post-list a{
 padding:0.7em;
+margin: 0 15px;
 }
 
 .post-list-magazine{
