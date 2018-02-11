@@ -74,6 +74,8 @@ if (!is_admin()) {
 		wp_register_script( 'remodal', get_bloginfo('template_directory'). '/library/js/libs/remodal.js', array('jquery'), '1.0.0', true );
 		wp_register_script( 'masonry.pkgd.min', get_bloginfo('template_directory'). '/library/js/libs/masonry.pkgd.min.js', array('jquery'), '4.0.0', true );
 		wp_register_script( 'imagesloaded', get_bloginfo('template_directory'). '/library/js/libs/imagesloaded.js', array('jquery'), '4.1.0', true );
+		wp_register_script( 'iscroll', get_bloginfo('template_directory'). '/library/js/libs/iscroll.js', array('jquery'), '1.0.2', true );
+		wp_register_script( 'dropdown', get_bloginfo('template_directory'). '/library/js/libs/dropdown.js', array('jquery'), '3.3.5', true );
 		if(!wp_is_mobile() && !strstr($ieua, 'Trident') && !strstr($ieua, 'MSIE') && (get_option('side_options_animatenone') == "ani_on")){
 			wp_register_script( 'wow', get_bloginfo('template_directory'). '/library/js/libs/wow.min.js', array('jquery'), '', true );
 		}
@@ -87,6 +89,8 @@ if (!is_admin()) {
 			wp_enqueue_script( 'remodal' );
 			wp_enqueue_script( 'masonry.pkgd.min' );
 			wp_enqueue_script( 'imagesloaded' );
+			wp_enqueue_script( 'iscroll' );
+			wp_enqueue_script( 'dropdown' );
 			wp_enqueue_script( 'main-js' );
 			wp_enqueue_script( 'css-modernizr' );
 		if(is_front_page() || is_home()) {
@@ -109,6 +113,7 @@ function register_style() {
 	wp_register_style('gf_Lato', '//fonts.googleapis.com/css?family=Lato');
 	wp_register_style('slick', get_bloginfo('template_directory').'/library/css/slick.css');
 	wp_register_style('remodal', get_bloginfo('template_directory').'/library/css/remodal.css');
+	wp_register_style('drawer', get_bloginfo('template_directory').'/library/css/drawer.css');
 	wp_register_style('animate', get_bloginfo('template_directory').'/library/css/animate.min.css');
 	wp_register_style('lp_css', get_bloginfo('template_directory').'/library/css/lp.css');
 }
@@ -121,6 +126,7 @@ function register_style() {
 			wp_enqueue_style('gf_Lato');
 			wp_enqueue_style('fontawesome');
 			wp_enqueue_style('remodal');
+			wp_enqueue_style('drawer');
 		if((get_option('side_options_animatenone') == "ani_on")){
 			wp_enqueue_style('animate');
 		}

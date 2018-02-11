@@ -43,10 +43,9 @@ jQuery(function( $ ) {
 <div id="bxslider_custom">
     <ul class="bxslider">
         <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0001.jpg'; ?>"/></li>
+        <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0004.jpg'; ?>"/></li>
         <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0002.jpg'; ?>"/></li>
         <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0003.jpg'; ?>"/></li>
-        <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0004.jpg'; ?>"/></li>
-        <li><img class="responsive-img" width="100%" src="<?php echo get_bloginfo('stylesheet_directory').'/bxslider/slide_index_0005.jpg'; ?>"/></li>
     </ul>
 </div>
 

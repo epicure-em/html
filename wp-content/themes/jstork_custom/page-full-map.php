@@ -36,19 +36,90 @@ Template Name:サイドバーなし（1カラム）map
     gestureHandling: "cooperative" ,
     zoom: 17 ,
     
-    styles: [
-        { featureType: "all", elementType: "all",
-                stylers: [{ hue: "#1d2238" } , ] ,
-        } ,
-            
-        { featureType: "water", elementType: "all",
-                stylers: [{ color: "#4e7ede" , } ,] ,
-        } ,
-        
-        { featureType: "poi", elementType: "labels",
-                stylers: [{ visibility: "off" , } ,] ,
-        } ,
-    ]
+    styles: 
+    [
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#ececec"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#464646"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#dcdcdc"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#464646"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#bee0c9"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#fafafa"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#d5d5d5"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "-50"
+            },
+            {
+                "lightness": "17"
+            },
+            {
+                "color": "#a1d6e2"
+            }
+        ]
+    }
+]
 } ) ;
 
 // Marker

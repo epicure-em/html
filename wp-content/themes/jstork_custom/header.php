@@ -32,10 +32,13 @@
 
 <?php wp_head(); ?>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+<meta name="google-site-verification" content="FVKOR0YA7xbrTMbaSkq7j7yevTb_7IiHlRq70z-hiUg" />
+<script src="https://unpkg.com/current-device/umd/current-device.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js" integrity="sha256-qWt5IwpxZvhegiyvbrx/BIGoPJgJnhAExbm5q6PEdDw=" crossorigin="anonymous"></script>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('drawer drawer--right'); ?>>
+
 <div id="container" class="<?php echo esc_html(get_option('post_options_ttl'));?> <?php echo esc_html(get_option('side_options_sidebarlayout'));?> <?php echo esc_html(get_option('post_options_date'));?>">
 <?php if(!is_singular( 'post_lp' ) ): ?>
 
@@ -45,13 +48,15 @@
 <div id="logo" class="gf <?php echo esc_html(get_option('opencage_logo_size'));?>">
 <?php if ( is_home() || is_front_page() ) : ?>
 <?php if ( get_theme_mod( 'opencage_logo' ) ) : ?>
-<h1 class="h1 img"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_mod( 'opencage_logo' ); ?>" alt="<?php bloginfo('name'); ?>"></a></h1>
+<h1 class="h1 img pclogo"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_mod( 'opencage_logo' ); ?>" alt="<?php bloginfo('name'); ?>"></a></h1>
+<h1 class="h1 img splogo"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="http://ando-n.jp/wp-content/uploads/2018/01/ae46b1f460ee46f789c27b264a6cb421.png" alt="<?php bloginfo('name'); ?>"></a></h1>
 <?php else : ?>
 <h1 class="h1 text"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 <?php endif; ?>
 <?php else: ?>
 <?php if ( get_theme_mod( 'opencage_logo' ) ) : ?>
-<p class="h1 img"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_mod( 'opencage_logo' ); ?>" alt="<?php bloginfo('name'); ?>"></a></p>
+<p class="h1 img pclogo"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_theme_mod( 'opencage_logo' ); ?>" alt="<?php bloginfo('name'); ?>"></a></p>
+<p class="h1 img splogo"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="http://ando-n.jp/wp-content/uploads/2018/01/ae46b1f460ee46f789c27b264a6cb421.png" alt="<?php bloginfo('name'); ?>"></a></p>
 <?php else : ?>
 <p class="h1 text"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></p>
 <?php endif; ?>
@@ -107,23 +112,40 @@
 
 <?php else:?>
 
-<div class="remodal" data-remodal-id="spnavi" data-remodal-options="hashTracking:false">
-<button data-remodal-action="close" class="remodal-close"><span class="text gf">CLOSE</span></button>
-<?php wp_nav_menu(array(
-     'container' => false,
-     'container_class' => 'sp_g_nav menu cf',
-     'menu' => __( 'グローバルナビ' ),
-     'menu_class' => 'sp_g_nav nav top-nav cf',
-     'theme_location' => 'main-nav',
-     'before' => '',
-     'after' => '',
-     'link_before' => '',
-     'link_after' => '',
-     'depth' => 0,
-     'fallback_cb' => ''
-)); ?>
-<button data-remodal-action="close" class="remodal-close"><span class="text gf">CLOSE</span></button>
-</div>
+
+<!-- モバイルグローバルナビ -->
+<button type="button" class="drawer-toggle drawer-hamburger">
+  <span class="sr-only">toggle navigation</span>
+  <span class="drawer-hamburger-icon"></span>
+</button>
+
+<nav class="drawer-nav">
+  <ul class="drawer-menu">
+      <li><a class="drawer-menu-item" href="/" title="HOME">HOME</a></li>
+      
+      <li class="drawer-dropdown">
+          <a class="drawer-menu-item" href="#" data-toggle="dropdown" role="button" aria-expanded="false">アンド・ンについて <span class="drawer-caret"></span></a>
+          <ul class="drawer-dropdown-menu">
+              <li><a class="drawer-dropdown-menu-item" href="/about/" title="アンド・ンとは">アンド・ンとは</a></li>
+              <li><a class="drawer-dropdown-menu-item" href="/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/" title="アクセス">アクセス</a></li>
+          </ul>
+      </li>
+      
+      <li><a class="drawer-menu-item" href="/category/event/" title="EVENT">イベント</a></li>
+      
+      <li class="drawer-dropdown">
+          <a class="drawer-menu-item" href="#" data-toggle="dropdown" role="button" aria-expanded="false">レンタルスペース <span class="drawer-caret"></span></a>
+          <ul class="drawer-dropdown-menu">
+              <li><a class="drawer-dropdown-menu-item" href="/%EF%BC%91%E9%9A%8E%E3%81%AE%E3%83%AC%E3%83%B3%E3%82%BF%E3%83%AB%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9/" title="1階（借店舗・茶房）">1階（貸店舗・茶房）</a></li>
+              <li><a class="drawer-dropdown-menu-item" href="/%EF%BC%92%E9%9A%8E%E3%81%AE%E3%83%AC%E3%83%B3%E3%82%BF%E3%83%AB%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9/" title="2階（お稽古事）">2階（お稽古事）</a></li>
+          </ul>
+      </li>
+      
+      <li><a class="drawer-menu-item" href="/%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/" title="アクセス">アクセス</a></li>
+      <li class="last"><a class="drawer-menu-item" href="/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B/" title="お問い合わせ">お問い合わせ</a></li>
+  </ul>
+</nav>
+
 
 <?php endif; ?>
 

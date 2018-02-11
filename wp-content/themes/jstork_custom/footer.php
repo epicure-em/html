@@ -3,7 +3,6 @@
 </div>
 
 
-
 <footer id="footer" class="footer <?php echo get_option('side_options_headerbg');?>" role="contentinfo">
 	<div id="inner-footer" class="inner wrap cf">
 		<nav role="navigation">
@@ -61,11 +60,10 @@
 
 </div>
 <?php wp_footer(); ?>
-<!-- template check -->
-<?php
-global $template;
-$template_name = basename($template, '.php');
-echo $template_name;
-?>
+<script>
+$(document).ready(function() {
+  $(".drawer").drawer();
+});
+</script>
 </body>
 </html>
